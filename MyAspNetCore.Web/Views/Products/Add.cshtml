@@ -28,8 +28,12 @@ id javascript alanında yakalamak için kullanıyıruz
     </div>
 
     <div class="form-group mb-3">
-        <label asp-for="Color">Ürün renk:</label>
-        <input class="form-control" asp-for="Color">
+        @*<label asp-for="Color">Ürün renk:</label>
+        <input class="form-control" asp-for="Color">*@
+
+        <select class="form-select" asp-for="Color" asp-items="@ViewBag.ColorSelect">
+            <option value="">Renk seçiniz</option>
+        </select>
     </div>
 
 
