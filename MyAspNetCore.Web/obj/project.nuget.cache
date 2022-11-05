@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "5FaI1lSEOVFS+PBmHsv8V40fEHcPedqRKYvoACeycodssG1vE2XvDl02L/duXwVyERo4lm944bF60UaJQFr6sw==",
+  "dgSpecHash": "D77nfPSMxtDAt/u2FyY8SpCszWcDqzgboRavQ2Jd9xKJpzxIBG9Dx9+QgIuee3YhS6IPAFDB3AtweZxd08sIHQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\lion\\source\\repos\\MyAspNetCore.Web\\MyAspNetCore.Web\\MyAspNetCore.Web.csproj",
   "expectedPackageFiles": [
@@ -175,7 +175,10 @@
     "C:\\Users\\lion\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\lion\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\lion\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\lion\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\lion\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\lion\\.nuget\\packages\\xunit.abstractions\\2.0.3\\xunit.abstractions.2.0.3.nupkg.sha512",
+    "C:\\Users\\lion\\.nuget\\packages\\xunit.extensibility.core\\2.4.2\\xunit.extensibility.core.2.4.2.nupkg.sha512",
+    "C:\\Users\\lion\\.nuget\\packages\\xunit.extensibility.execution\\2.4.2\\xunit.extensibility.execution.2.4.2.nupkg.sha512"
   ],
   "logs": []
 }

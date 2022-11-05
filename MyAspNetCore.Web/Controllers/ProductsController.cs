@@ -40,7 +40,8 @@ namespace MyAspNetCore.Web.Controllers
             _context.SaveChanges();
 
             return RedirectToAction("Index");
-        }  
+        }
+        
         [HttpGet]
         public IActionResult Add()
         {
@@ -63,24 +64,41 @@ namespace MyAspNetCore.Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult Add(Product newProduct)
+        public IActionResult Add(ProductViewModel newProduct)
         {
             // Request Header-Body
 
-            //1. Yöntem
-            //var name  = HttpContext.Request.Form["Name"].ToString();
-            //var price = decimal.Parse(HttpContext.Request.Form["Price"].ToString());
-            //var stock = int.Parse(HttpContext.Request.Form["Stock"].ToString());
-            //var color = HttpContext.Request.Form["Color"].ToString();
+            if(ModelState.IsValid)
+            {
+                //validasyondan datalar geçmişsse true gelir
+                _context.Products.Add(_mapper.Map<Product>(newProduct));
+                _context.SaveChanges();
 
-            //2. Yöntem
-            //Product newProduct = new Product() { Name=Name,Price=Price,Color=Color, Stock=Stock};
+                TempData["status"] = "Ürün başarıyla eklendi.";
+                return RedirectToAction("Index");
 
-            _context.Products.Add(newProduct);
-            _context.SaveChanges();
+            }
+            else
+            {
+                ViewBag.Expire = new Dictionary<string, int>()
+                {
+                    {"1 Ay",1 },
+                    {"3 Ay",3 },
+                    {"6 Ay",6 },
+                    {"12 Ay",12 }
+                };
 
-            TempData["status"] = "Ürün başarıyla eklendi.";
-            return RedirectToAction("Index");
+                ViewBag.ColorSelect = new SelectList(new List<ColorSelectList>()
+                {
+                    new(){Data="Mavi",Value="Mavi"},
+                    new(){Data="Kırmızı",Value="Kırmızı"},
+                    new(){Data="Sarı",Value="Sarı"}
+                }, "Value", "Data");
+
+                return View(); 
+            }
+
+           
         }
 
         [HttpGet]
