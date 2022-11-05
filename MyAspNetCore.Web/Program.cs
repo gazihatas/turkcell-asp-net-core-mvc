@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using MyAspNetCore.Web.Helpers;
 using MyAspNetCore.Web.Models;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 });
 
 //builder.Services.AddSingleton<IHelper, Helper>();
+
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 var app = builder.Build();
 

@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MyAspNetCore.Web.Helpers;
 using MyAspNetCore.Web.Models;
+using MyAspNetCore.Web.ViewModels;
 
 namespace MyAspNetCore.Web.Controllers
 {
@@ -9,40 +11,22 @@ namespace MyAspNetCore.Web.Controllers
     {
         
         private  AppDbContext _context;
+        private readonly IMapper _mapper;
         private readonly ProductRepository _productRepository;
 
         //Dependency Injection
-        public ProductsController(AppDbContext context)
+        public ProductsController(AppDbContext context, IMapper mapper)
         {
             //DI Container
             //Dependency Injection Pattern
             _productRepository = new ProductRepository();
-          
             _context = context;
-            //Herhangi bir kayıt yok ise dataları veri tabanına ekler.
-            //Linq method
-            
-            //Veritabanına ekleme metodu
-            //if(!_context.Products.Any())
-            //{
-            //    _context.Products.Add(new Product() { Name = "Kalem 1", Price = 100, Stock = 100, Color="Red",});
-            //    _context.Products.Add(new Product() { Name = "Kalem 2", Price = 200, Stock = 200, Color = "Red",});
-            //    _context.Products.Add(new Product() { Name = "Kalem 3", Price = 300, Stock = 300, Color = "Red",});
-                
-            //    //Ef Core dataları memeory de tuttuğu dataları db ye yansıtır.
-            //    _context.SaveChanges();
-            //}
-            
-
-
+            _mapper = mapper;
         }
         public IActionResult Index()
         {
- 
-            
             var products = _context.Products.ToList();
-
-            return View(products);
+            return View(_mapper.Map<List<ProductViewModel>>(products));
         }
 
         public IActionResult Remove(int id)
