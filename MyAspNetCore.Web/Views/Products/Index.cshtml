@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+@model List<Product>
+<h1>Ürünler</h1>
+
+@if(TempData["status"]!=null)
+{
+    //TempData sayfada 1 kere gözükür. Sayfayı yenilersen kaybedersin
+    //TempData bir sayfadan diğer sayfaya veriyi cookie den tutar.
+    <div class="alert alert-primary" role="alert">
+        @TempData["status"]
+    </div>
+}
+
+
+<a asp-controller="products" asp-action="add">Ürün Ekle</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>İsim</th>
+            <th>Fiyat</th>
+            <th>Stok</th>
+            <th>Renk</th>
+            <th>Yayınlansın mı ?</th>
+            <th>Süre(Ay)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+                <td>@item.Stock</td>
+                <td>@item.Color</td>
+                <td>@(item.IsPublish ? "Evet" : "Hayır")
+                    
+                    @*@if(@item.IsPublish)
+                    {
+                        <text>Evet</text>
+                    }
+                    else
+                    {
+                        <text>Hayır</text>
+                    }*@
+                </td>
+                <td>@item.Expire</td>
+                <td><a asp-controller="products" asp-action="remove" asp-route-id="@item.Id">Sil</a></td>
+                <td><a asp-controller="products" asp-action="update" asp-route-id="@item.Id">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+ 
+
+</table>
+
