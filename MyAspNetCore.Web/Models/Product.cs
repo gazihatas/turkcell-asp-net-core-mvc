@@ -6,6 +6,7 @@
         public string? Name { get; set; }
         public decimal Price { get; set; }
         public int Stock { get; set; }
+        public string Description { get; set; }
 
         //string bir referans tiptir ve nullable alabilir.
         //.net 6 dan önce olsaydı bu ozellik  ?  eklemeden çalışacaktı
