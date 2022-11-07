@@ -66,35 +66,48 @@ namespace MyAspNetCore.Web.Controllers
         [HttpPost]
         public IActionResult Add(ProductViewModel newProduct)
         {
-            // Request Header-Body
+            //if (!string.IsNullOrEmpty(newProduct.Name) && newProduct.Name.StartsWith("A"))
+            //{
+            //    ModelState.AddModelError(String.Empty, " Ürün ismi A harfi başlayamaz.");
+            //}
 
-            if(ModelState.IsValid)
+            ViewBag.Expire = new Dictionary<string, int>()
             {
-                //validasyondan datalar geçmişsse true gelir
-                _context.Products.Add(_mapper.Map<Product>(newProduct));
-                _context.SaveChanges();
+                {"1 Ay",1 },
+                {"3 Ay",3 },
+                {"6 Ay",6 },
+                {"12 Ay",12 }
+            };
 
-                TempData["status"] = "Ürün başarıyla eklendi.";
-                return RedirectToAction("Index");
+            ViewBag.ColorSelect = new SelectList(new List<ColorSelectList>()
+            {
+                new(){Data="Mavi",Value="Mavi"},
+                new(){Data="Kırmızı",Value="Kırmızı"},
+                new(){Data="Sarı",Value="Sarı"}
+            }, "Value", "Data");
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    throw new Exception("db hatası");
+                    //validasyondan datalar geçmişsse true gelir
+                    _context.Products.Add(_mapper.Map<Product>(newProduct));
+                    _context.SaveChanges();
+
+                    TempData["status"] = "Ürün başarıyla eklendi.";
+                    return RedirectToAction("Index");
+                }
+                catch (Exception)
+                {
+                    ModelState.AddModelError(String.Empty,"Ürün kaydedilirken bir hata meydana geldi. Lütfen daha sonra tekrar deneyiniz.");
+                    return View();
+                }
+                
 
             }
             else
             {
-                ViewBag.Expire = new Dictionary<string, int>()
-                {
-                    {"1 Ay",1 },
-                    {"3 Ay",3 },
-                    {"6 Ay",6 },
-                    {"12 Ay",12 }
-                };
-
-                ViewBag.ColorSelect = new SelectList(new List<ColorSelectList>()
-                {
-                    new(){Data="Mavi",Value="Mavi"},
-                    new(){Data="Kırmızı",Value="Kırmızı"},
-                    new(){Data="Sarı",Value="Sarı"}
-                }, "Value", "Data");
-
                 return View(); 
             }
 
