@@ -11,7 +11,7 @@ namespace MyAspNetCore.Web.ViewModels
         [System.ComponentModel.DataAnnotations.Required( ErrorMessage = "İsim alanı boş olamaz.")]
         public string? Name { get; set; }
 
-        
+        [RegularExpression(@"^[0-9]+(\,[0-9]{1,2})", ErrorMessage = "Fiyat alanı noktadan sonra 2 basamaklı olmalıdr.")]
         [System.ComponentModel.DataAnnotations.Required(ErrorMessage="Fiyat alanı boş olamaz.")]
         [Range(1, 200, ErrorMessage = "Fiyat alanı 1 ile 1000 arasında bir değer olmalıdır.")]
         public decimal Price { get; set; }
