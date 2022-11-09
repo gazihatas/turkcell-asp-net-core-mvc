@@ -36,7 +36,7 @@ namespace MyAspNetCore.Web.ViewModels
         [System.ComponentModel.DataAnnotations.Required(ErrorMessage = "Yayınlanma süresi boş olamaz.")]
         public int? Expire { get; set; }
 
-        [EmailAddress(ErrorMessage = "Email adresi uygum formatta değil")]
-        public string? EmailAddress { get; set; }
+        //[EmailAddress(ErrorMessage = "Email adresi uygum formatta değil")]
+        //public string? EmailAddress { get; set; }
     }
 }
