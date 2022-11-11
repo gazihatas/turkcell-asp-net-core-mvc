@@ -23,10 +23,34 @@ namespace MyAspNetCore.Web.Controllers
             _context = context;
             _mapper = mapper;
         }
+
+        [Route("[controller]/[action]/{page}/{pageSize}")]
+        public IActionResult Pages(int page, int pageSize)
+        {
+            //Skip => atlar
+            
+
+            var products = _context.Products.Skip((page - 1) * pageSize).Take(pageSize).ToList();
+
+
+            ViewBag.page = page;
+            ViewBag.pageSize = pageSize;
+
+            return View(_mapper.Map<List<ProductViewModel>>(products));
+        }
+
         public IActionResult Index()
         {
             var products = _context.Products.ToList();
             return View(_mapper.Map<List<ProductViewModel>>(products));
+        }
+
+        [Route("urunler/urun/{productid}")]
+        public IActionResult GetById(int productid)
+        {
+            var product = _context.Products.Find(productid);
+
+            return View(_mapper.Map<ProductViewModel>(product));
         }
 
         public IActionResult Remove(int id)
