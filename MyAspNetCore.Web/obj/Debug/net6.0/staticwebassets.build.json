@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Z+BjJCUsBMMArMwfA83m4/SaVGjKm3n2D9QhUmUNPME=",
+  "Hash": "pVsXIALKC4j/7r7t6BmxEhDaVWZpBZQsD7Eo4+bBWQs=",
   "Source": "MyAspNetCore.Web",
   "BasePath": "_content/MyAspNetCore.Web",
   "Mode": "Default",
@@ -83,6 +83,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\lion\\source\\repos\\turkcell-asp-net-core-mvc\\MyAspNetCore.Web\\wwwroot\\images\\car.jpg",
+      "SourceId": "MyAspNetCore.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\lion\\source\\repos\\turkcell-asp-net-core-mvc\\MyAspNetCore.Web\\wwwroot\\",
+      "BasePath": "_content/MyAspNetCore.Web",
+      "RelativePath": "images/car.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\car.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\lion\\source\\repos\\turkcell-asp-net-core-mvc\\MyAspNetCore.Web\\wwwroot\\images\\car-100x100.jpg",
+      "SourceId": "MyAspNetCore.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\lion\\source\\repos\\turkcell-asp-net-core-mvc\\MyAspNetCore.Web\\wwwroot\\",
+      "BasePath": "_content/MyAspNetCore.Web",
+      "RelativePath": "images/car-100x100.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\car-100x100.jpg"
     },
     {
       "Identity": "C:\\Users\\lion\\source\\repos\\turkcell-asp-net-core-mvc\\MyAspNetCore.Web\\wwwroot\\js\\site.js",

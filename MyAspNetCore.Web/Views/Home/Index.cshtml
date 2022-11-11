@@ -1,5 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+
+    var product = new Product() { Id = 1, Name = "Kalem 1", Price = 100, Stock = 200 };
 }
 
 @*<partial name="_MenuPartialView"/>*@
@@ -20,6 +22,19 @@
         
         <vc:product-list type=1></vc:product-list>
     </div>
+    
+    <div class="col-md-4">
+        <italic>ASP.NET Core</italic>
+        <product-show product="@product"></product-show>
+        
+        
+    </div>
 </div> 
+
+<div>
+    <img src="images/car.jpg"/>
+    <thumbnail image-src="images/car.jpg"></thumbnail>
+    
+</div>
 
 
