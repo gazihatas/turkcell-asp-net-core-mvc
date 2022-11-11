@@ -24,7 +24,13 @@ namespace MyAspNetCore.Web.Controllers
             _mapper = mapper;
         }
 
-        [Route("[controller]/[action]/{page}/{pageSize}")]
+        public IActionResult Index()
+        {
+            var products = _context.Products.ToList();
+            return View(_mapper.Map<List<ProductViewModel>>(products));
+        }
+
+        [Route("[controller]/[action]/{page}/{pageSize}",Name="productpage")]
         public IActionResult Pages(int page, int pageSize)
         {
             //Skip => atlar
@@ -39,13 +45,9 @@ namespace MyAspNetCore.Web.Controllers
             return View(_mapper.Map<List<ProductViewModel>>(products));
         }
 
-        public IActionResult Index()
-        {
-            var products = _context.Products.ToList();
-            return View(_mapper.Map<List<ProductViewModel>>(products));
-        }
+     
 
-        [Route("urunler/urun/{productid}")]
+        [Route("urunler/urun/{productid}",Name="product")]
         public IActionResult GetById(int productid)
         {
             var product = _context.Products.Find(productid);
