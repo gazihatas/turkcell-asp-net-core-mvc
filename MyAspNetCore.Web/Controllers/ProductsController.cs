@@ -7,6 +7,7 @@ using MyAspNetCore.Web.ViewModels;
 
 namespace MyAspNetCore.Web.Controllers
 {
+    [Route("[controller]/[action]")]
     public class ProductsController : Controller
     {
         
@@ -55,6 +56,7 @@ namespace MyAspNetCore.Web.Controllers
             return View(_mapper.Map<ProductViewModel>(product));
         }
 
+        [HttpGet("{id}")]
         public IActionResult Remove(int id)
         {
             //_productRepository.Remove(id);
