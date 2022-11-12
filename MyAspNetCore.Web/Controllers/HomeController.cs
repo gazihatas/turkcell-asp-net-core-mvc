@@ -6,6 +6,7 @@ using MyAspNetCore.Web.ViewModels;
 
 namespace MyAspNetCore.Web.Controllers
 {
+    [LogFilter]
     [Route("[controller]/[action]")]
     public class HomeController : Controller
     {
@@ -21,8 +22,8 @@ namespace MyAspNetCore.Web.Controllers
         }
 
         [Route("/")]
-        [Route("Home")]
-        [Route("Home/Index")]
+        [Route("/Home")]
+        [Route("/Home/Index")]
         public IActionResult Index()
         {
             var products = _context.Products.OrderByDescending(x => x.Id).Select(x =>
