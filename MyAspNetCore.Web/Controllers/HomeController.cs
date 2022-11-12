@@ -6,7 +6,7 @@ using MyAspNetCore.Web.ViewModels;
 
 namespace MyAspNetCore.Web.Controllers
 {
-    
+    [Route("[controller]/[action]")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -19,7 +19,8 @@ namespace MyAspNetCore.Web.Controllers
             _context = context;
             _mapper = mapper;
         }
-        [Route("")]
+
+        [Route("/")]
         [Route("Home")]
         [Route("Home/Index")]
         public IActionResult Index()
@@ -39,7 +40,7 @@ namespace MyAspNetCore.Web.Controllers
             };
             return View();
         }
-        [Route("Home/Privacy")]
+      
         public IActionResult Privacy()
         {
             var products = _context.Products.OrderByDescending(x => x.Id).Select(x =>
@@ -65,6 +66,7 @@ namespace MyAspNetCore.Web.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
+        
         public IActionResult Visitor()
         {
             return View();
