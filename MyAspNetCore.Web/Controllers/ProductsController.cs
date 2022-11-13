@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using MyAspNetCore.Web.Filters;
 using MyAspNetCore.Web.Helpers;
 using MyAspNetCore.Web.Models;
 using MyAspNetCore.Web.ViewModels;
@@ -46,8 +47,8 @@ namespace MyAspNetCore.Web.Controllers
             return View(_mapper.Map<List<ProductViewModel>>(products));
         }
 
-     
 
+        [ServiceFilter(typeof(NotFoundFilter))]
         [Route("urunler/urun/{productid}",Name="product")]
         public IActionResult GetById(int productid)
         {
@@ -56,6 +57,7 @@ namespace MyAspNetCore.Web.Controllers
             return View(_mapper.Map<ProductViewModel>(product));
         }
 
+        [ServiceFilter(typeof(NotFoundFilter))]
         [HttpGet("{id}")]
         public IActionResult Remove(int id)
         {
@@ -142,6 +144,7 @@ namespace MyAspNetCore.Web.Controllers
            
         }
 
+        [ServiceFilter(typeof(NotFoundFilter))]
         [HttpGet]
         public IActionResult Update(int id)
         {

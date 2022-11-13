@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "abr6nUfN4dkrbkK+m5VoQhMBsXL2eAMc9ANiw1MZYEZpXSif6vhmPAlx4qYtErxmmk5aL2RFKnTJ1wLyHi/qfA==",
+  "dgSpecHash": "O2ut+ZTus/gNgUFTOCfEZjtjYhX1tdYiaQsz4aFmJ9r5LR23WrNYTKpLR7NDKdkY94ILjF2xlwXx2MPlaaG+jw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lion\\Desktop\\turkcell-asp-net-core-mvc\\MyAspNetCore.Web\\MyAspNetCore.Web.csproj",
+  "projectFilePath": "C:\\Users\\lion\\source\\repos\\turkcell-asp-net-core-mvc\\MyAspNetCore.Web\\MyAspNetCore.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lion\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\lion\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
