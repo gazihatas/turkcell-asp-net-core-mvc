@@ -1,3 +1,5 @@
+using MiddlewareExample.Web.Middlewares;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -15,7 +17,26 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+#region MapWhen Kullanýmý
 
+app.MapWhen(context => context.Request.Query.ContainsKey("name"), app =>
+{
+    app.Use(async (context, next) =>
+    {
+        await context.Response.WriteAsync("Before 1. Middleware\n");
+
+        await next();
+
+        await context.Response.WriteAsync("After 1. Middleware\n");
+    });
+
+    app.Run(async context =>
+    {
+        await context.Response.WriteAsync("Terminal 3. Middleware\n");
+    });
+
+}); 
+#endregion
 
 #region Map ve Run Kullanýmý
 //app.Use(async (context, next) =>
@@ -52,11 +73,11 @@ app.Map("/ornek", app =>
     //{
     //    await context.Response.WriteAsync("Ornek url'i için middleware");
     //});
-}); 
+});
 #endregion
 
 
-
+app.UseMiddleware<WhiteIpAddressControlMiddleware>();
 
 
 
