@@ -8,93 +8,93 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MyAspNetCore.Web
 build_property.RootNamespace = MyAspNetCore.Web
-build_property.ProjectDir = C:\Users\lion\source\repos\turkcell-asp-net-core-mvc\MyAspNetCore.Web\
+build_property.ProjectDir = C:\Users\lion\Desktop\turkcell-asp-net-core-mvc\MyAspNetCore.Web\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\lion\source\repos\turkcell-asp-net-core-mvc\MyAspNetCore.Web
+build_property.MSBuildProjectDirectory = C:\Users\lion\Desktop\turkcell-asp-net-core-mvc\MyAspNetCore.Web
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/lion/source/repos/turkcell-asp-net-core-mvc/MyAspNetCore.Web/PartialViews/_ProductListPartialView.cshtml]
+[C:/Users/lion/Desktop/turkcell-asp-net-core-mvc/MyAspNetCore.Web/PartialViews/_ProductListPartialView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFydGlhbFZpZXdzXF9Qcm9kdWN0TGlzdFBhcnRpYWxWaWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lion/source/repos/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Blog/Article.cshtml]
+[C:/Users/lion/Desktop/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Blog/Article.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xBcnRpY2xlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lion/source/repos/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Home/Index.cshtml]
+[C:/Users/lion/Desktop/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lion/source/repos/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Home/Privacy.cshtml]
+[C:/Users/lion/Desktop/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lion/source/repos/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Home/Visitor.cshtml]
+[C:/Users/lion/Desktop/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Home/Visitor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWaXNpdG9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lion/source/repos/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Products/Add.cshtml]
+[C:/Users/lion/Desktop/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Products/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lion/source/repos/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Products/GetById.cshtml]
+[C:/Users/lion/Desktop/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Products/GetById.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcR2V0QnlJZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lion/source/repos/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Products/Index.cshtml]
+[C:/Users/lion/Desktop/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Products/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lion/source/repos/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Products/Pages.cshtml]
+[C:/Users/lion/Desktop/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Products/Pages.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcUGFnZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lion/source/repos/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Products/Update.cshtml]
+[C:/Users/lion/Desktop/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Products/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lion/source/repos/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Shared/Components/ProductList/Default.cshtml]
+[C:/Users/lion/Desktop/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Shared/Components/ProductList/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcUHJvZHVjdExpc3RcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lion/source/repos/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Shared/Components/ProductList/Type2.cshtml]
+[C:/Users/lion/Desktop/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Shared/Components/ProductList/Type2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcUHJvZHVjdExpc3RcVHlwZTIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lion/source/repos/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Shared/Components/Visitor/Default.cshtml]
+[C:/Users/lion/Desktop/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Shared/Components/Visitor/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVmlzaXRvclxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lion/source/repos/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Shared/Error.cshtml]
+[C:/Users/lion/Desktop/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lion/source/repos/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Shared/_FooterPartialView.cshtml]
+[C:/Users/lion/Desktop/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Shared/_FooterPartialView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Gb290ZXJQYXJ0aWFsVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lion/source/repos/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Shared/_HeaderPatialView.cshtml]
+[C:/Users/lion/Desktop/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Shared/_HeaderPatialView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9IZWFkZXJQYXRpYWxWaWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lion/source/repos/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Shared/_MenuPartialView.cshtml]
+[C:/Users/lion/Desktop/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Shared/_MenuPartialView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NZW51UGFydGlhbFZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lion/source/repos/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/lion/Desktop/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lion/source/repos/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/_ViewImports.cshtml]
+[C:/Users/lion/Desktop/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lion/source/repos/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/_ViewStart.cshtml]
+[C:/Users/lion/Desktop/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lion/source/repos/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Shared/_Layout.cshtml]
+[C:/Users/lion/Desktop/turkcell-asp-net-core-mvc/MyAspNetCore.Web/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-mjcdq4tdq5

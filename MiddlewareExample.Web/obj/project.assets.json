@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lion\\source\\repos\\turkcell-asp-net-core-mvc\\MiddlewareExample.Web\\MiddlewareExample.Web.csproj",
+      "projectUniqueName": "C:\\Users\\lion\\Desktop\\turkcell-asp-net-core-mvc\\MiddlewareExample.Web\\MiddlewareExample.Web.csproj",
       "projectName": "MiddlewareExample.Web",
-      "projectPath": "C:\\Users\\lion\\source\\repos\\turkcell-asp-net-core-mvc\\MiddlewareExample.Web\\MiddlewareExample.Web.csproj",
+      "projectPath": "C:\\Users\\lion\\Desktop\\turkcell-asp-net-core-mvc\\MiddlewareExample.Web\\MiddlewareExample.Web.csproj",
       "packagesPath": "C:\\Users\\lion\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lion\\source\\repos\\turkcell-asp-net-core-mvc\\MiddlewareExample.Web\\obj\\",
+      "outputPath": "C:\\Users\\lion\\Desktop\\turkcell-asp-net-core-mvc\\MiddlewareExample.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\lion\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -64,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

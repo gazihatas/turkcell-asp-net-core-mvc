@@ -17,29 +17,43 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 
-app.Use(async (context, next) =>
+#region Map ve Run Kullanýmý
+//app.Use(async (context, next) =>
+//{
+//    await context.Response.WriteAsync("Before 1. Middleware\n");
+
+//    await next();
+
+//    await context.Response.WriteAsync("After 1. Middleware\n");
+//});
+
+//app.Use(async (context, next) =>
+//{
+//    await context.Response.WriteAsync("Before 2. Middleware\n");
+
+//    await next();
+
+//    await context.Response.WriteAsync("After 2. Middleware\n");
+//});
+////Sonlandýrýcý Middleware
+//app.Run(async context =>
+//{
+//    await context.Response.WriteAsync("Terminal 3. Middleware\n");
+//}); 
+#endregion
+
+
+#region Map Metodu Kullanýmý
+app.Map("/ornek", app =>
 {
-    await context.Response.WriteAsync("Before 1. Middleware\n");
 
-    await next();
 
-    await context.Response.WriteAsync("After 1. Middleware\n");
-});
-
-app.Use(async (context, next) =>
-{
-    await context.Response.WriteAsync("Before 2. Middleware\n");
-
-    await next();
-
-    await context.Response.WriteAsync("After 2. Middleware\n");
-});
-
-app.Run(async context =>
-{
-    await context.Response.WriteAsync("Terminal 3. Middleware\n");
-});
-
+    //app.Run(async context =>
+    //{
+    //    await context.Response.WriteAsync("Ornek url'i için middleware");
+    //});
+}); 
+#endregion
 
 
 
