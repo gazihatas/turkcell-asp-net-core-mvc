@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.FileProviders;
@@ -92,7 +93,10 @@ namespace MyAspNetCore.Web.Controllers
                 new(){Data="Kırmızı",Value="Kırmızı"},
                 new(){Data="Sarı",Value="Sarı"}
             },"Value","Data");
-            
+
+            var categories = _context.Category.ToList();
+            ViewBag.categorySelect = new SelectList(categories, "Id", "Name");
+
             return View();
         }
 

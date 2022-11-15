@@ -27,7 +27,7 @@ namespace MyAspNetCore.Web.ViewModels
         [System.ComponentModel.DataAnnotations.Required(ErrorMessage = "Açıklama alanı boş olamaz.")]
         public string? Description { get; set; }
         
-        [System.ComponentModel.DataAnnotations.Required(ErrorMessage = "Renk seçimi boş olamaz.")]
+        [System.ComponentModel.DataAnnotations.Required(ErrorMessage = "Renk seçiniz.")]
         public string? Color { get; set; }
 
         [System.ComponentModel.DataAnnotations.Required(ErrorMessage = "Yayınlanma tarihi boş olamaz.")]
@@ -42,6 +42,9 @@ namespace MyAspNetCore.Web.ViewModels
 
         [ValidateNever]
         public string ImagePath { get; set; }
+
+        [System.ComponentModel.DataAnnotations.Required(ErrorMessage = "Kategori seçiniz.")]
+        public int CategoryId { get; set; }
 
         //[EmailAddress(ErrorMessage = "Email adresi uygum formatta değil")]
         //public string? EmailAddress { get; set; }
