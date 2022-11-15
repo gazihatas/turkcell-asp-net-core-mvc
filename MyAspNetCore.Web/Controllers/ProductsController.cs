@@ -159,6 +159,9 @@ namespace MyAspNetCore.Web.Controllers
                 result = View(); 
             }
 
+            var categories = _context.Category.ToList();
+            ViewBag.categorySelect = new SelectList(categories, "Id", "Name");
+
             ViewBag.Expire = new Dictionary<string, int>()
                 {
                     {"1 Ay",1 },
@@ -183,7 +186,13 @@ namespace MyAspNetCore.Web.Controllers
         public IActionResult Update(int id)
         {
 
+           
+
+
             var product = _context.Products.Find(id);
+
+            var categories = _context.Category.ToList();
+            ViewBag.categorySelect = new SelectList(categories, "Id", "Name", product.CategoryId);
 
             ViewBag.radioExpireValue = product.Expire;
             ViewBag.Expire = new Dictionary<string, int>()
@@ -228,6 +237,10 @@ namespace MyAspNetCore.Web.Controllers
                     new(){Data="Sarı",Value="Sarı"}
                 }, "Value", "Data", updateProduct.Color);
 
+
+                var categories = _context.Category.ToList();
+                ViewBag.categorySelect = new SelectList(categories, "Id", "Name",updateProduct.CategoryId);
+
                 return View();
             }
 
@@ -241,8 +254,8 @@ namespace MyAspNetCore.Web.Controllers
                 updateProduct.Image.CopyTo(stream);
                 updateProduct.ImagePath = randomImageName;
             }
-
-            _context.Products.Update(_mapper.Map<Product>(updateProduct));
+            var product = _mapper.Map<Product>(updateProduct);
+            _context.Products.Update(product);
             _context.SaveChanges();
 
             TempData["status"] = "Ürün başarıyla güncellendi";
