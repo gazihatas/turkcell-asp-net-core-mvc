@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+@section Scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#btnSave").click(function(){
+                
+                function loadComment()
+                {
+                    $.ajax({
+                        type: "GET",
+                        url: "/VisitorAjax/SaveVisitorComment",
+                        data: jsonData,
+                        success: function (data) {
+                            console.log(data);
+                        },
+                        errro: function (error) {
+                            console.log(error);
+                        }
+
+
+                    })
+                }
+
+            
+                var name = $("#Name").val();
+                
+                var comment = $("#Comment").val();
+                
+                var jsonData={"name":name,"comment":comment};
+                
+                $.ajax({
+                    type:"POST",
+                    url:"/VisitorAjax/SaveVisitorComment",
+                    data:jsonData,
+                    success:function(data){
+                        console.log(data);
+                    },
+                    errro:function(error){
+                        console.log(error);    
+                    }
+
+
+                })
+        })
+    </script>
+    }
+
+
+    <div id="comments">
+        <div class="card-body mt-3">
+            <div class="card-body">
+                <h5 class="card-title"></h5>
+                <h6 class="card-subtitle mb-2 text-muted"></h6>
+                <p class="card-text"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="Name" class="form-label">İsim</label>
+        <input class="form-control" id="Name" name="Name"/>
+    </div>
+
+    <div class="form-floating mb-3">
+        <textarea id="Comment" name="Comment" class="form-control" placeholder="Yorum" style="height: 100px"></textarea>
+        <label for="Comment">Yorum</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>

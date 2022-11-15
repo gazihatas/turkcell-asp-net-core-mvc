@@ -34,7 +34,7 @@ namespace MyAspNetCore.Web.Controllers
         public IActionResult Index()
         {
             List<ProductViewModel> products = _context.Products.Include(x => x.Category).Select(x => new
-            ProductViewModel
+            ProductViewModel()
             {
                 Id=x.Id,
                 Name=x.Name,
@@ -128,19 +128,26 @@ namespace MyAspNetCore.Web.Controllers
                 {
                    
                     var product = _mapper.Map<Product>(newProduct);
-                    if(newProduct.Image != null && newProduct.Image.Length>0)
+
+
+                    if (newProduct.Image != null && newProduct.Image.Length>0)
                     {
+
                         var root = _fileProvider.GetDirectoryContents("wwwroot");
+
                         var images = root.First(x => x.Name == "images");
+                        
                         var randomImageName = Guid.NewGuid() + Path.GetExtension(newProduct.Image.FileName);
+                        
                         var path = Path.Combine(images.PhysicalPath, randomImageName);
+                        
                         using var stream = new FileStream(path, FileMode.Create);
+                        
                         newProduct.Image.CopyTo(stream);
+                        
                         product.ImagePath = randomImageName;
                     }
 
-                    //throw new Exception("db hatası");
-                    //validasyondan datalar geçmişsse true gelir
                     _context.Products.Add(product);
                     _context.SaveChanges();
 
