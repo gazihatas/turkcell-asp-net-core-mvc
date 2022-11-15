@@ -3,6 +3,7 @@ using MyAspNetCore.Web.Helpers;
 using MyAspNetCore.Web.Models;
 using System.Reflection;
 using MyAspNetCore.Web.Filters;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     //dbContext.products 
     options.UseSqlServer(builder.Configuration.GetConnectionString("SqlCon"));
 });
+
+builder.Services.AddSingleton<IFileProvider>(new PhysicalFileProvider(Directory.GetCurrentDirectory()));
 
 //builder.Services.AddSingleton<IHelper, Helper>();
 

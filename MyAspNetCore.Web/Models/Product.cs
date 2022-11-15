@@ -20,6 +20,8 @@
         
         public int Expire { get; set; }
 
+        public string? ImagePath { get; set; }
+
         //public string? Barcode { get; set; }
         //public int? Width { get; set; }
         //public int? Height { get; set; }

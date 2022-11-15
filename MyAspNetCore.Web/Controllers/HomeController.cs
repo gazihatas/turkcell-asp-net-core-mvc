@@ -45,7 +45,7 @@ namespace MyAspNetCore.Web.Controllers
         [CustomExceptionFilter]
         public IActionResult Privacy()
         {
-            throw new Exception("Veritabanı ile ilgili bir hata meydana geldir.");
+           // throw new Exception("Veritabanı ile ilgili bir hata meydana geldir.");
 
             var products = _context.Products.OrderByDescending(x => x.Id).Select(x =>
                 new ProductPartialViewModel()

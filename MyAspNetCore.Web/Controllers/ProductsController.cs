@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Extensions.FileProviders;
 using MyAspNetCore.Web.Filters;
 using MyAspNetCore.Web.Helpers;
 using MyAspNetCore.Web.Models;
@@ -15,15 +16,17 @@ namespace MyAspNetCore.Web.Controllers
         private  AppDbContext _context;
         private readonly IMapper _mapper;
         private readonly ProductRepository _productRepository;
+        private readonly IFileProvider _fileProvider;
 
         //Dependency Injection
-        public ProductsController(AppDbContext context, IMapper mapper)
+        public ProductsController(AppDbContext context, IMapper mapper, IFileProvider fileProvider)
         {
             //DI Container
             //Dependency Injection Pattern
             _productRepository = new ProductRepository();
             _context = context;
             _mapper = mapper;
+            _fileProvider = fileProvider;
         }
 
         public IActionResult Index()
@@ -96,33 +99,28 @@ namespace MyAspNetCore.Web.Controllers
         [HttpPost]
         public IActionResult Add(ProductViewModel newProduct)
         {
-            //if (!string.IsNullOrEmpty(newProduct.Name) && newProduct.Name.StartsWith("A"))
-            //{
-            //    ModelState.AddModelError(String.Empty, " Ürün ismi A harfi başlayamaz.");
-            //}
-
-            ViewBag.Expire = new Dictionary<string, int>()
-            {
-                {"1 Ay",1 },
-                {"3 Ay",3 },
-                {"6 Ay",6 },
-                {"12 Ay",12 }
-            };
-
-            ViewBag.ColorSelect = new SelectList(new List<ColorSelectList>()
-            {
-                new(){Data="Mavi",Value="Mavi"},
-                new(){Data="Kırmızı",Value="Kırmızı"},
-                new(){Data="Sarı",Value="Sarı"}
-            }, "Value", "Data");
+            IActionResult result = null;
 
             if (ModelState.IsValid)
             {
                 try
                 {
+                   
+                    var product = _mapper.Map<Product>(newProduct);
+                    if(newProduct.Image != null && newProduct.Image.Length>0)
+                    {
+                        var root = _fileProvider.GetDirectoryContents("wwwroot");
+                        var images = root.First(x => x.Name == "images");
+                        var randomImageName = Guid.NewGuid() + Path.GetExtension(newProduct.Image.FileName);
+                        var path = Path.Combine(images.PhysicalPath, randomImageName);
+                        using var stream = new FileStream(path, FileMode.Create);
+                        newProduct.Image.CopyTo(stream);
+                        product.ImagePath = randomImageName;
+                    }
+
                     //throw new Exception("db hatası");
                     //validasyondan datalar geçmişsse true gelir
-                    _context.Products.Add(_mapper.Map<Product>(newProduct));
+                    _context.Products.Add(product);
                     _context.SaveChanges();
 
                     TempData["status"] = "Ürün başarıyla eklendi.";
@@ -131,17 +129,32 @@ namespace MyAspNetCore.Web.Controllers
                 catch (Exception)
                 {
                     ModelState.AddModelError(String.Empty,"Ürün kaydedilirken bir hata meydana geldi. Lütfen daha sonra tekrar deneyiniz.");
-                    return View();
+                    result = View();
                 }
                 
-
             }
             else
             {
-                return View(); 
+                result = View(); 
             }
 
-           
+            ViewBag.Expire = new Dictionary<string, int>()
+                {
+                    {"1 Ay",1 },
+                    {"3 Ay",3 },
+                    {"6 Ay",6 },
+                    {"12 Ay",12 }
+                };
+
+            ViewBag.ColorSelect = new SelectList(new List<ColorSelectList>()
+                {
+                    new(){Data="Mavi",Value="Mavi"},
+                    new(){Data="Kırmızı",Value="Kırmızı"},
+                    new(){Data="Sarı",Value="Sarı"}
+                }, "Value", "Data");
+
+            return result;
+
         }
 
         [ServiceFilter(typeof(NotFoundFilter))]
@@ -168,11 +181,11 @@ namespace MyAspNetCore.Web.Controllers
             }, "Value", "Data",product.Color);
 
 
-            return View(_mapper.Map<ProductViewModel>(product));
+            return View(_mapper.Map<ProductUpdateViewModel>(product));
         }
 
         [HttpPost]
-        public IActionResult Update(ProductViewModel updateProduct)
+        public IActionResult Update(ProductUpdateViewModel updateProduct)
         {
             //var product = _context.Products.Find(updateProduct.Id);
 
@@ -197,7 +210,16 @@ namespace MyAspNetCore.Web.Controllers
                 return View();
             }
 
-
+            if (updateProduct.Image != null && updateProduct.Image.Length > 0)
+            {
+                var root = _fileProvider.GetDirectoryContents("wwwroot");
+                var images = root.First(x => x.Name == "images");
+                var randomImageName = Guid.NewGuid() + Path.GetExtension(updateProduct.Image.FileName);
+                var path = Path.Combine(images.PhysicalPath, randomImageName);
+                using var stream = new FileStream(path, FileMode.Create);
+                updateProduct.Image.CopyTo(stream);
+                updateProduct.ImagePath = randomImageName;
+            }
 
             _context.Products.Update(_mapper.Map<Product>(updateProduct));
             _context.SaveChanges();

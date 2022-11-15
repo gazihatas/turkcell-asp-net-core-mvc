@@ -2,14 +2,19 @@
 @{
     ViewData["Title"] = "Update";
 }
-@model ProductViewModel
+@model ProductUpdateViewModel
 
 <h1>Ürün Güncelleme</h1>
 
 
-<form asp-controller="Products" asp-action="Update" method="post">
+<form asp-controller="Products" asp-action="Update" method="post" enctype="multipart/form-data">
 
     <input type="hidden" asp-for="Id"/>
+    <input type="hidden" asp-for="ImagePath" />
+
+    <div>
+        <img style="width:100px; height:100px;" src="@(String.IsNullOrEmpty(Model.ImagePath)? "/images/noimage.png" :"/images/"+Model.ImagePath)"/>
+    </div>
 
     <div class="form-group mb-3">
         <label asp-for="Name" class="form-label">Ürün ismi:</label>
@@ -74,6 +79,11 @@
         <label asp-for="PublishDate" class="form-label">Ürün yayınlanma tarih :</label>
         <input class="form-control" asp-for="PublishDate">
         <span class="text-danger" asp-validation-for="PublishDate"></span>
+
+        <div class="mb-3">
+            <label for="formFileLg" class="form-label">Ürün Resim</label>
+            <input class="form-control form-control-lg" asp-for="Image" type="file" />
+        </div>
     </div>
 
     <button class="btn btn-primary" type="submit">Ürün Güncelle</button>

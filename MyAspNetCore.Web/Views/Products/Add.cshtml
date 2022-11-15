@@ -14,7 +14,7 @@ backend de kullanıcının girmiş olduğu dataları yakalamak amacıyla kullan�
 id javascript alanında yakalamak için kullanıyıruz
 -->
 
-<form asp-controller="Products" asp-action="Add" method="post">
+<form asp-controller="Products" asp-action="Add" method="post" enctype="multipart/form-data">
 
     <div class="form-group mb-3">
         <label asp-for="Name" class="form-label">Ürün ismi:</label>
@@ -89,6 +89,13 @@ id javascript alanında yakalamak için kullanıyıruz
 
         <span class="text-danger" asp-validation-for="EmailAddress"></span>
     </div>*@
+
+
+
+    <div class="mb-3">
+        <label for="formFileLg" class="form-label">Ürün Resim</label>
+        <input class="form-control form-control-lg" asp-for="Image" type="file"/>
+    </div>
 
     <button class="btn btn-primary" type="submit">Ürün Kaydet</button>
 

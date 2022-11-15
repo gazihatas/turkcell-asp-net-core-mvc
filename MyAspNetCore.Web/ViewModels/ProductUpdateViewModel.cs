@@ -5,11 +5,10 @@ using Microsoft.Build.Framework;
 
 namespace MyAspNetCore.Web.ViewModels
 {
-    public class ProductViewModel
+    public class ProductUpdateViewModel
     {
         public int Id { get; set; }
 
-        [Remote(action:"HasProductName", controller:"Products")]
         [StringLength(50,ErrorMessage = "İsim alanına en fazla 50 karakter girilebilir.")]
         [System.ComponentModel.DataAnnotations.Required( ErrorMessage = "İsim alanı boş olamaz.")]
         public string? Name { get; set; }
