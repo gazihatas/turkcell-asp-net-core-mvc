@@ -41,10 +41,11 @@ namespace MyAspNetCore.Web.ViewModels
         public IFormFile? Image { get; set; }
 
         [ValidateNever]
-        public string ImagePath { get; set; }
+        public string? ImagePath { get; set; }
 
         [System.ComponentModel.DataAnnotations.Required(ErrorMessage = "Kategori seçiniz.")]
         public int CategoryId { get; set; }
+        public string? CategoryName { get; set; }
 
         //[EmailAddress(ErrorMessage = "Email adresi uygum formatta değil")]
         //public string? EmailAddress { get; set; }

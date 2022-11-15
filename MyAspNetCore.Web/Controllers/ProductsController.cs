@@ -2,6 +2,7 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using MyAspNetCore.Web.Filters;
 using MyAspNetCore.Web.Helpers;
@@ -32,8 +33,24 @@ namespace MyAspNetCore.Web.Controllers
 
         public IActionResult Index()
         {
-            var products = _context.Products.ToList();
-            return View(_mapper.Map<List<ProductViewModel>>(products));
+            List<ProductViewModel> products = _context.Products.Include(x => x.Category).Select(x => new
+            ProductViewModel
+            {
+                Id=x.Id,
+                Name=x.Name,
+                Price=x.Price,
+                Stock=x.Stock,
+                CategoryName=x.Category.Name,
+                Color=x.Color,
+                Description=x.Description,
+                Expire=x.Expire,
+                ImagePath=x.ImagePath,
+                IsPublish=x.IsPublish,
+                PublishDate=x.PublishDate
+            }).ToList();
+
+            
+            return View(products);
         }
 
         [Route("[controller]/[action]/{page}/{pageSize}",Name="productpage")]
