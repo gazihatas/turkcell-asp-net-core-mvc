@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zKK99RBMGBQKqSaUCIrUlTsfr0u7DEAuTSDWaqzvLSg=",
+  "Hash": "U3pKic8Q9wV3bbQsTuVhvktrbUCAV+XLAa4JNti/6p8=",
   "Source": "MyAspNetCore.Web",
   "BasePath": "_content/MyAspNetCore.Web",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\lion\\Desktop\\turkcell-asp-net-core-mvc\\MyAspNetCore.Web\\wwwroot\\images\\3fd1f1fd-5ad4-4f94-9ca1-573b7b48d896.jpg",
+      "SourceId": "MyAspNetCore.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\lion\\Desktop\\turkcell-asp-net-core-mvc\\MyAspNetCore.Web\\wwwroot\\",
+      "BasePath": "_content/MyAspNetCore.Web",
+      "RelativePath": "images/3fd1f1fd-5ad4-4f94-9ca1-573b7b48d896.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\3fd1f1fd-5ad4-4f94-9ca1-573b7b48d896.jpg"
     },
     {
       "Identity": "C:\\Users\\lion\\Desktop\\turkcell-asp-net-core-mvc\\MyAspNetCore.Web\\wwwroot\\images\\6cf0acc9-b221-4e76-a3d0-841377976996.jpg",
