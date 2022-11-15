@@ -22,6 +22,9 @@
 
         public string? ImagePath { get; set; }
 
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
+
         //public string? Barcode { get; set; }
         //public int? Width { get; set; }
         //public int? Height { get; set; }
